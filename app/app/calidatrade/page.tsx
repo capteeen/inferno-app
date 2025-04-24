@@ -729,6 +729,20 @@ export default function CalidaTrade() {
   const LoadingModal = () => {
     if (!isConfirming) return null;
 
+    // Add effect to handle the 20-second timer
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsConfirming(false);
+        setShowSuccessModal(true);
+        // Reload the page after showing success message
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      }, 20000);
+
+      return () => clearTimeout(timer);
+    }, [isConfirming]);
+
     return (
       <div className="fixed inset-0 z-[100] flex items-center justify-center">
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
