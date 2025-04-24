@@ -1731,7 +1731,7 @@ export default function BlazeBot() {
       {/* Floating Sidebar */}
       <div className="fixed top-1/2 -translate-y-1/2 left-8 z-50 glass rounded-full py-6 px-4 border border-white/10 shadow-xl backdrop-blur-md bg-black/30">
         <div className="flex flex-col items-center gap-8">
-          <Link href="/app" className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center relative group">
+          <Link href="/" className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center relative group">
             <div className="absolute inset-0 rounded-full border border-primary/20 animate-[spin_15s_linear_infinite] group-hover:border-primary/40 transition-colors"></div>
             <Image 
               src="/inferno-logo.svg" 
@@ -1763,20 +1763,20 @@ export default function BlazeBot() {
             />
           </Link>
           
-          <Link href="/app/tradewarden" className="w-14 h-14 rounded-full hover:bg-white/5 flex items-center justify-center transition-all duration-300 group">
+          <Link href="/app/flamefeed" className="w-14 h-14 rounded-full hover:bg-white/5 flex items-center justify-center transition-all duration-300 group">
             <Image 
-              src="/module-walletwarden.svg" 
-              alt="TradeWarden" 
+              src="/module-flamefeed.svg" 
+              alt="FlameFeed" 
               width={28} 
               height={28}
               className="group-hover:scale-110 transition-transform duration-300"
             />
           </Link>
-          
-          <Link href="/app/flamefeed" className="w-14 h-14 rounded-full hover:bg-white/5 flex items-center justify-center transition-all duration-300 group">
+
+          <Link href="/app/calidatrade" className="w-14 h-14 rounded-full hover:bg-white/5 flex items-center justify-center transition-all duration-300 group">
             <Image 
-              src="/module-flamefeed.svg" 
-              alt="FlameFeed" 
+              src="/module-calida.svg" 
+              alt="CalidaTrade" 
               width={28} 
               height={28}
               className="group-hover:scale-110 transition-transform duration-300"

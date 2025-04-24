@@ -19,7 +19,7 @@ export default function AppDashboard() {
       {/* Floating Sidebar */}
       <div className="fixed top-1/2 -translate-y-1/2 left-8 z-50 glass rounded-full py-6 px-4 border border-white/10 shadow-xl backdrop-blur-md bg-black/30">
         <div className="flex flex-col items-center gap-8">
-          <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center relative group">
+          <Link href="/" className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center relative group">
             <div className="absolute inset-0 rounded-full border border-primary/20 animate-[spin_15s_linear_infinite] group-hover:border-primary/40 transition-colors"></div>
             <Image 
               src="/inferno-logo.svg" 
@@ -28,22 +28,12 @@ export default function AppDashboard() {
               height={32}
               className="group-hover:scale-110 transition-transform duration-300"
             />
-          </div>
+          </Link>
           
           <Link href="/app/blazebot" className="w-14 h-14 rounded-full hover:bg-white/5 flex items-center justify-center transition-all duration-300 group">
             <Image 
               src="/module-blazebot.svg" 
               alt="BlazeBot" 
-              width={28} 
-              height={28}
-              className="group-hover:scale-110 transition-transform duration-300"
-            />
-          </Link>
-          
-          <Link href="/app/tokentorch" className="w-14 h-14 rounded-full hover:bg-white/5 flex items-center justify-center transition-all duration-300 group">
-            <Image 
-              src="/module-walletwarden.svg" 
-              alt="TradeWarden" 
               width={28} 
               height={28}
               className="group-hover:scale-110 transition-transform duration-300"
@@ -64,6 +54,16 @@ export default function AppDashboard() {
             <Image 
               src="/module-flamefeed.svg" 
               alt="FlameFeed" 
+              width={28} 
+              height={28}
+              className="group-hover:scale-110 transition-transform duration-300"
+            />
+          </Link>
+          
+          <Link href="/app/calidatrade" className="w-14 h-14 rounded-full hover:bg-white/5 flex items-center justify-center transition-all duration-300 group">
+            <Image 
+              src="/module-calida.svg" 
+              alt="CalidaTrade" 
               width={28} 
               height={28}
               className="group-hover:scale-110 transition-transform duration-300"
@@ -186,22 +186,6 @@ export default function AppDashboard() {
               <p className="text-sm text-text-muted">AI crypto assistant for all your queries</p>
             </Link>
             
-            <Link href="/app/tokentorch" className="glass rounded-xl p-4 border border-white/10 hover:border-primary/20 transition-all duration-300 backdrop-blur-md bg-black/30 shadow-glow hover:shadow-[0_0_15px_rgba(255,94,94,0.3)] group">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative">
-                  <div className="absolute inset-0 rounded-full border border-primary/20 group-hover:border-primary/40 transition-colors"></div>
-                  <Image 
-                    src="/module-walletwarden.svg" 
-                    alt="TradeWarden" 
-                    width={24} 
-                    height={24}
-                  />
-                </div>
-                <h3 className="font-bold group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-primary/70 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">TradeWarden</h3>
-              </div>
-              <p className="text-sm text-text-muted">Token scanning and risk assessment</p>
-            </Link>
-            
             <Link href="/app/walletwarden" className="glass rounded-xl p-4 border border-white/10 hover:border-primary/20 transition-all duration-300 backdrop-blur-md bg-black/30 shadow-glow hover:shadow-[0_0_15px_rgba(255,94,94,0.3)] group">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative">
@@ -232,6 +216,22 @@ export default function AppDashboard() {
                 <h3 className="font-bold group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-primary/70 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">FlameFeed</h3>
               </div>
               <p className="text-sm text-text-muted">Personalized news and updates feed</p>
+            </Link>
+            
+            <Link href="/app/calidatrade" className="glass rounded-xl p-4 border border-white/10 hover:border-primary/20 transition-all duration-300 backdrop-blur-md bg-black/30 shadow-glow hover:shadow-[0_0_15px_rgba(255,94,94,0.3)] group">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative">
+                  <div className="absolute inset-0 rounded-full border border-primary/20 group-hover:border-primary/40 transition-colors"></div>
+                  <Image 
+                    src="/module-calida.svg" 
+                    alt="CalidaTrade" 
+                    width={24} 
+                    height={24}
+                  />
+                </div>
+                <h3 className="font-bold group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-primary/70 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">CalidaTrade</h3>
+              </div>
+              <p className="text-sm text-text-muted">Token swap interface powered by Jupiter</p>
             </Link>
             
             <Link href="/app/infernotrade" className="glass rounded-xl p-4 border border-white/10 hover:border-primary/20 transition-all duration-300 backdrop-blur-md bg-black/30 shadow-glow hover:shadow-[0_0_15px_rgba(255,94,94,0.3)] group">

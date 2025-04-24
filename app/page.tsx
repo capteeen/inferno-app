@@ -1,46 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
 import SplineBackground from "./components/SplineBackground";
+import Navigation from "./components/Navigation";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white relative">
+    <div className="min-h-screen text-white relative">
       <SplineBackground />
+      <Navigation />
       
-      {/* Floating Navigation */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 glass px-4 py-3 rounded-full flex items-center gap-6 animate-float shadow-xl backdrop-blur-md border border-white/10">
-        <span className="text-xl font-bold text-primary mr-2">Syntrada</span>
-        <div className="hidden md:flex items-center gap-6">
-          <a href="#tools" className="text-sm hover:text-primary transition-colors">Tools</a>
-          <a href="#stats" className="text-sm hover:text-primary transition-colors">Stats</a>
-          <a href="#advantages" className="text-sm hover:text-primary transition-colors">Advantages</a>
-          <a href="#token" className="text-sm hover:text-primary transition-colors">$FIRE Token</a>
-          <Link href="/app/calidatrade" className="text-sm hover:text-primary transition-colors">CalidaTrade</Link>
-        </div>
-        <Link href="/launch" className="btn-primary btn text-sm animate-glow-pulse">Launch App</Link>
-      </nav>
-
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 md:px-10 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
-          <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-primary">Explore Web3</span> Smarter.<br />
-              Burn Through The Noise.
+          <div className="animate-fade-in text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <span className="text-primary">Explore Web3</span> Smarter.<br className="hidden md:block" />
+              <span className="md:hidden"> </span>Burn Through The Noise.
             </h1>
-            <p className="text-lg text-text-muted mb-8 max-w-md">
+            <p className="text-base sm:text-lg text-text-muted mb-8 max-w-md mx-auto md:mx-0">
               An AI-powered intelligence platform for the Solana ecosystem — delivering real-time intelligence across tokens, wallets, contracts, and launches.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/app" className="btn btn-primary animate-slide-up stagger-1">
-                Get Started
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <Link href="/app/blazebot" className="btn btn-primary animate-slide-up stagger-1">
+                Try BlazeBot
               </Link>
-              <Link href="/docs" className="btn btn-outline animate-slide-up stagger-2">
-                Learn More
+              <Link href="/app/tokentorch" className="btn btn-outline animate-slide-up stagger-2">
+                Analyze Token
               </Link>
             </div>
           </div>
-          <div className="relative animate-fade-in stagger-3">
+          <div className="relative animate-fade-in stagger-3 mt-12 md:mt-0">
             <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-primary/20 via-accent/10 to-info/20 blur-xl animate-pulse-slow opacity-70"></div>
             <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl">
               {/* Dashboard Interface */}
@@ -59,7 +48,7 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-3 gap-px bg-white/5">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/5">
                 {/* Left Panel - Token Overview */}
                 <div className="bg-surface/95 p-4 relative">
                   <div className="flex items-center justify-between mb-3">
@@ -123,7 +112,7 @@ export default function Home() {
                 </div>
                 
                 {/* Middle Panel - Chat */}
-                <div className="bg-surface/95 col-span-2 flex flex-col">
+                <div className="bg-surface/95 sm:col-span-2 flex flex-col">
                   <div className="p-4 flex-grow">
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
@@ -262,7 +251,7 @@ export default function Home() {
                   <span className="text-[10px] font-medium">WalletWarden</span>
                 </div>
                 <div className="bg-surface-raised rounded-md p-2 flex flex-col items-center text-center group hover:bg-primary/10 transition-colors duration-300">
-          <Image
+                  <Image
                     src="/module-flamefeed.svg" 
                     alt="FlameFeed" 
             width={16}
@@ -273,7 +262,7 @@ export default function Home() {
                 </div>
                 <div className="bg-surface-raised rounded-md p-2 flex flex-col items-center text-center group hover:bg-primary/10 transition-colors duration-300">
                   <Image
-                    src="/module-walletwarden.svg" 
+                    src="/module-calida.svg" 
                     alt="CalidaTrade" 
                     width={16}
                     height={16}
@@ -447,66 +436,61 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* WalletWarden */}
+          {/* CalidaTrade */}
           <div className="glass rounded-3xl p-8 border border-white/5 hover:border-primary/20 transition-all duration-300 animate-fade-in stagger-3 group hover:shadow-lg hover:-translate-y-1">
             <div className="relative mb-6 h-48 overflow-hidden rounded-xl bg-gradient-to-br from-surface-raised to-surface">
               <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
               <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
                 
-                {/* Enhanced Wallet Portfolio Visualization */}
+                {/* Trading UI Elements */}
                 <div className="w-full max-w-[90%] bg-surface/30 rounded-lg p-3 border border-white/5">
                   <div className="flex justify-between items-center mb-2">
-                    <div className="flex items-center gap-1">
-                      <span className="text-[10px] font-medium">Portfolio Value</span>
-                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                    </div>
-                    <span className="text-[10px] text-primary font-medium">$24,586.32</span>
-                  </div>
-                  
-                  {/* Interactive Portfolio Visualization */}
-                  <div className="flex gap-1 mb-2 group-hover:animate-pulse">
-                    <div className="h-3 rounded-l-sm bg-primary flex-[3_3_0%] group-hover:flex-[3.2_3.2_0%] transition-all"></div>
-                    <div className="h-3 bg-accent flex-[2_2_0%] group-hover:flex-[1.9_1.9_0%] transition-all"></div>
-                    <div className="h-3 bg-info flex-[1.5_1.5_0%] group-hover:flex-[1.6_1.6_0%] transition-all"></div>
-                    <div className="h-3 rounded-r-sm bg-success flex-[1_1_0%] group-hover:flex-[1.1_1.1_0%] transition-all"></div>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-1 text-[10px]">
-                    <div className="flex items-center gap-1">
-                      <div className="w-2 h-2 rounded-full bg-primary"></div>
-                      <span>SOL 60%</span>
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-primary"></div>
+                      <span className="text-[10px] font-medium">SOL/USDC</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <div className="w-2 h-2 rounded-full bg-accent"></div>
-                      <span>JUP 20%</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <div className="w-2 h-2 rounded-full bg-info"></div>
-                      <span>BONK 15%</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <div className="w-2 h-2 rounded-full bg-success"></div>
-                      <span>USDC 5%</span>
+                      <span className="text-[10px] text-primary font-medium">+2.4%</span>
+                      <div className="bg-primary/20 rounded-full px-1.5 py-0.5 text-[8px]">24h</div>
                     </div>
                   </div>
                   
-                  {/* Transaction activity */}
-                  <div className="mt-2 pt-2 border-t border-white/10">
-                    <div className="flex justify-between items-center">
-                      <span className="text-[9px] text-white/70">Recent Activity</span>
-                      <span className="text-[9px] text-primary">Live</span>
+                  {/* Price Chart */}
+                  <div className="h-12 flex items-end gap-0.5">
+                    {[20, 26, 22, 28, 24, 30, 28, 35, 32, 38, 34, 40, 38, 44].map((height, i) => (
+                      <div 
+                        key={i} 
+                        className={`w-full ${i < 7 ? 'bg-white/20' : 'bg-primary/70'} rounded-sm animate-slide-up`}
+                        style={{ height: `${height}%`, animationDelay: `${i * 50}ms` }}
+                      ></div>
+                    ))}
+                  </div>
+                  
+                  {/* Order Book */}
+                  <div className="mt-3 space-y-1">
+                    <div className="flex items-center justify-between text-[8px]">
+                      <span className="text-error">$98.50</span>
+                      <span className="text-white/50">2.5 SOL</span>
                     </div>
-                    <div className="mt-1 text-[8px] flex items-center gap-1">
-                      <div className="w-1.5 h-1.5 bg-success rounded-full"></div>
-                      <span className="text-success">+12.5 SOL</span>
-                      <span className="text-white/50">•</span>
-                      <span className="text-white/50">2 min ago</span>
+                    <div className="flex items-center justify-between text-[8px]">
+                      <span className="text-error">$98.75</span>
+                      <span className="text-white/50">1.8 SOL</span>
                     </div>
-                    <div className="mt-0.5 text-[8px] flex items-center gap-1">
-                      <div className="w-1.5 h-1.5 bg-error rounded-full"></div>
-                      <span className="text-error">-125 BONK</span>
-                      <span className="text-white/50">•</span>
-                      <span className="text-white/50">15 min ago</span>
+                    <div className="flex items-center justify-between text-[8px]">
+                      <span className="text-success">$99.00</span>
+                      <span className="text-white/50">3.2 SOL</span>
+                    </div>
+                  </div>
+                  
+                  {/* Trading Controls */}
+                  <div className="mt-3 flex gap-2">
+                    <div className="flex-1 bg-surface/50 rounded px-2 py-1 text-[8px]">
+                      <div className="text-white/50">Amount</div>
+                      <div className="font-medium">1.5 SOL</div>
+                    </div>
+                    <div className="flex-1 bg-surface/50 rounded px-2 py-1 text-[8px]">
+                      <div className="text-white/50">Price</div>
+                      <div className="font-medium">$98.75</div>
                     </div>
                   </div>
                 </div>
@@ -518,24 +502,21 @@ export default function Home() {
               <div className="relative w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center">
                 <div className="absolute inset-0 rounded-full border border-primary/20 animate-[spin_15s_linear_infinite]"></div>
                 <Image 
-                  src="/module-walletwarden.svg" 
-                  alt="WalletWarden" 
+                  src="/module-calida.svg" 
+                  alt="CalidaTrade" 
                   width={20} 
                   height={20} 
                   className="group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">WalletWarden</h3>
+              <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">CalidaTrade</h3>
             </div>
             
             <p className="text-text-muted mb-6 leading-relaxed">
-              Wallet analysis tool for comprehensive asset and risk assessment.
+              Advanced trading interface with real-time market data and order execution.
             </p>
-            <Link href="/app/walletwarden" className="inline-flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
-              Check Wallets
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:translate-x-1 transition-transform">
-                <path d="M8 3L14 8L8 13M14 8H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+            <Link href="/app/calidatrade" className="btn btn-primary animate-glow-pulse mt-8">
+              Start Trading
             </Link>
           </div>
 
@@ -635,12 +616,9 @@ export default function Home() {
             <p className="text-text-muted mb-6 leading-relaxed">
               Personalized news and updates feed curated by AI for relevance.
             </p>
-            <Link href="/app/flamefeed" className="inline-flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
-              Read Updates
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:translate-x-1 transition-transform">
-                <path d="M8 3L14 8L8 13M14 8H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
+            <div className="btn btn-outline animate-glow-pulse mt-8 cursor-not-allowed opacity-50">
+              Coming Soon
+            </div>
           </div>
         </div>
       </section>
@@ -937,33 +915,105 @@ export default function Home() {
             <div className="animate-slide-in-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 mb-4">
                 <div className="w-4 h-4 rounded-full bg-primary animate-pulse"></div>
-                <span className="text-sm text-primary font-medium">$FIRE Token</span>
+                <span className="text-sm text-primary font-medium">$SYNTRADA Token</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Powering the Syntrada Ecosystem</h2>
               <p className="text-text-muted mb-8">
-                The FIRE token powers all platform functionality and rewards platform users. Stake to unlock premium features and earn rewards from protocol fees.
+                The $SYNTRADA token is the backbone of our ecosystem, enabling premium features, governance, and rewards. Stake to unlock advanced analytics and earn from platform fees.
               </p>
+              
+              {/* Token Distribution */}
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="bg-surface/10 p-4 rounded-lg animate-scale stagger-1">
                   <p className="text-text-muted text-sm mb-1">Total Supply</p>
-                  <p className="text-xl font-bold">100,000,000</p>
-                </div>
-                <div className="bg-surface/10 p-4 rounded-lg animate-scale stagger-2">
-                  <p className="text-text-muted text-sm mb-1">Initial Price</p>
-                  <p className="text-xl font-bold">$0.015</p>
+                  <p className="text-xl font-bold">1,000,000,000</p>
                 </div>
                 <div className="bg-surface/10 p-4 rounded-lg animate-scale stagger-3">
                   <p className="text-text-muted text-sm mb-1">Staking APY</p>
-                  <p className="text-xl font-bold">12-24%</p>
+                  <p className="text-xl font-bold">15-25%</p>
                 </div>
                 <div className="bg-surface/10 p-4 rounded-lg animate-scale stagger-4">
                   <p className="text-text-muted text-sm mb-1">Platform Fee</p>
-                  <p className="text-xl font-bold">3%</p>
+                  <p className="text-xl font-bold">2.5%</p>
                 </div>
               </div>
-              <Link href="/token" className="btn btn-primary animate-glow-pulse">
-                Token Details
-              </Link>
+
+              {/* Token Utility */}
+              <div className="space-y-4 mb-8">
+                <h3 className="text-xl font-semibold text-primary">Token Utility</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-surface/10 p-4 rounded-lg">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                      <span className="font-medium">Premium Access</span>
+                    </div>
+                    <p className="text-sm text-text-muted">Unlock advanced analytics and premium features</p>
+                  </div>
+                  <div className="bg-surface/10 p-4 rounded-lg">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                      <span className="font-medium">Governance</span>
+                    </div>
+                    <p className="text-sm text-text-muted">Vote on platform upgrades and features</p>
+                  </div>
+                  <div className="bg-surface/10 p-4 rounded-lg">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                      <span className="font-medium">Staking Rewards</span>
+                    </div>
+                    <p className="text-sm text-text-muted">Earn passive income through staking</p>
+                  </div>
+                  <div className="bg-surface/10 p-4 rounded-lg">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-2 h-2 rounded-full bg-primary"></div>
+                      <span className="font-medium">Fee Discounts</span>
+                    </div>
+                    <p className="text-sm text-text-muted">Reduced fees for token holders</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Token Distribution Chart */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold text-primary">Token Distribution</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-primary"></div>
+                      <span className="text-sm">Team & Development</span>
+                    </div>
+                    <span className="text-sm font-medium">20%</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-accent"></div>
+                      <span className="text-sm">Community & Marketing</span>
+                    </div>
+                    <span className="text-sm font-medium">15%</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-info"></div>
+                      <span className="text-sm">Liquidity Pool</span>
+                    </div>
+                    <span className="text-sm font-medium">25%</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-success"></div>
+                      <span className="text-sm">Staking Rewards</span>
+                    </div>
+                    <span className="text-sm font-medium">30%</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-warning"></div>
+                      <span className="text-sm">Treasury</span>
+                    </div>
+                    <span className="text-sm font-medium">10%</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="relative animate-slide-in-right">
               <div className="absolute -inset-4 rounded-full bg-primary/20 blur-3xl animate-pulse-slow"></div>
@@ -973,7 +1023,7 @@ export default function Home() {
                 <div className="absolute inset-8 rounded-full border-4 border-primary/40 animate-[spin_10s_linear_infinite_reverse]"></div>
                 <div className="absolute inset-12 rounded-full border-4 border-primary/60 animate-[spin_5s_linear_infinite]"></div>
                 <div className="relative w-24 h-24 flex items-center justify-center bg-primary rounded-full shadow-glow text-2xl font-bold animate-pulse-slow">
-                  FIRE
+                  $SYN
                 </div>
               </div>
             </div>
